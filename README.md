@@ -9,8 +9,7 @@ Scroll-driven shadows, dark mode aware, zero boilerplate.
 
 ---
 
-<!-- Replace YOUR_CDN_URL after uploading demo.mp4 via a GitHub Issue -->
-https://YOUR_CDN_URL/demo.mp4
+https://github.com/user-attachments/assets/aca886ae-4790-40ca-aa31-32c7af5e8091
 
 ---
 
