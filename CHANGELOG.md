@@ -5,26 +5,37 @@ All notable changes to this project will be documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.5] - 2026-04-26
+
+### Changed
+
+- README: added inline preview screenshot and animated GIF demo.
+- README: switched image URLs to `raw.githubusercontent.com` so pub.dev renders them inline without redirect issues.
+
 ## [0.0.4] - 2026-04-26
 
 ### Fixed
+
 - Corrected GitHub repository URLs (username `mjaber5`) in `pubspec.yaml`, `README.md`, and `LICENSE`.
 
 ## [0.0.3] - 2026-04-26
 
 ### Fixed
+
 - README: removed broken GIF reference (replaced with video link).
 - CHANGELOG: added missing `0.0.2` entry so pub.dev validation passes.
 
 ## [0.0.2] - 2026-04-26
 
 ### Changed
+
 - README: added demo video via GitHub CDN and light/dark mode toggle example.
 - `.pubignore`: excluded `android/`, `ios/`, and `assets/demo.mov` from the published package.
 
 ## [0.0.1] - 2026-04-26
 
 ### Added
+
 - `GlassAppBar` — transparent app bar with iOS 26-style gradient shadow.
   - Scroll-driven shadow reveal via optional `ScrollController`.
   - `forceShadow` override for parent-driven control.

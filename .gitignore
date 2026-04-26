@@ -44,5 +44,5 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-# Demo assets — for repo/README only, not needed by consumers
-assets/
+# Demo assets — raw video excluded, preview image is tracked
+assets/demo.mov
