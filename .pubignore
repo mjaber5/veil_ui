@@ -1,0 +1,48 @@
+# ── Carried over from .gitignore (pubignore replaces gitignore entirely) ──────
+
+_.class
+_.log
+_.pyc
+_.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ / Android Studio
+
+_.iml
+_.ipr
+\*.iws
+.idea/
+
+# Flutter / Dart / Pub
+
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+build/
+/coverage/
+
+# Symbolication / obfuscation
+
+app._.symbols
+app._.map.json
+
+# ── Package-specific exclusions ───────────────────────────────────────────────
+
+# Flutter app shell — not part of the package API
+
+android/
+ios/
+
+# Raw video — only the GIF is needed by pub.dev
+assets/demo.mov

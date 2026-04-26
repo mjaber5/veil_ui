@@ -9,9 +9,7 @@ Scroll-driven shadows, dark mode aware, zero boilerplate.
 
 ---
 
-![veil_ui demo](assets/demo.gif)
-
-https://github.com/user-attachments/assets/aca886ae-4790-40ca-aa31-32c7af5e8091
+[![veil_ui demo](https://github.com/mohammedjaber/veil_ui/raw/main/assets/preview.png)](https://github.com/user-attachments/assets/aca886ae-4790-40ca-aa31-32c7af5e8091)
 
 ---
 

@@ -43,3 +43,6 @@ app.*.map.json
 /android/app/debug
 /android/app/profile
 /android/app/release
+
+# Demo assets — for repo/README only, not needed by consumers
+assets/
