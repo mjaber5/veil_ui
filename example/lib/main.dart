@@ -3,18 +3,34 @@ import 'package:veil_ui/veil_ui.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  // Initialize once — caches the iOS version for the lifetime of the app.
   await IosVersionHelper.instance.init();
   runApp(const VeilUiExampleApp());
 }
 
-class VeilUiExampleApp extends StatelessWidget {
+// ── App root — owns ThemeMode state ──────────────────────────────────────────
+
+class VeilUiExampleApp extends StatefulWidget {
   const VeilUiExampleApp({super.key});
+
+  @override
+  State<VeilUiExampleApp> createState() => _VeilUiExampleAppState();
+}
+
+class _VeilUiExampleAppState extends State<VeilUiExampleApp> {
+  ThemeMode _themeMode = ThemeMode.light;
+
+  void _toggleTheme() {
+    setState(() {
+      _themeMode =
+          _themeMode == ThemeMode.light ? ThemeMode.dark : ThemeMode.light;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'veil_ui Example',
+      themeMode: _themeMode,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF6366F1)),
         useMaterial3: true,
@@ -26,20 +42,44 @@ class VeilUiExampleApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const ExampleHome(),
+      home: ExampleHome(onToggleTheme: _toggleTheme, themeMode: _themeMode),
     );
   }
 }
 
+// ── Home ──────────────────────────────────────────────────────────────────────
+
 class ExampleHome extends StatelessWidget {
-  const ExampleHome({super.key});
+  const ExampleHome({
+    super.key,
+    required this.onToggleTheme,
+    required this.themeMode,
+  });
+
+  final VoidCallback onToggleTheme;
+  final ThemeMode themeMode;
 
   @override
   Widget build(BuildContext context) {
+    final isDark = themeMode == ThemeMode.dark;
+
     return Scaffold(
+      extendBodyBehindAppBar: true,
+      appBar: GlassAppBar(
+        title: 'veil_ui',
+        showLeadingButton: false,
+        actions: [
+          IconButton(
+            icon: Icon(isDark ? Icons.light_mode_rounded : Icons.dark_mode_rounded),
+            tooltip: isDark ? 'Switch to light' : 'Switch to dark',
+            onPressed: onToggleTheme,
+          ),
+        ],
+      ),
       body: ListView(
         children: [
           ListTile(
+            leading: const Icon(Icons.view_agenda_outlined),
             title: const Text('GlassAppBar — standard'),
             onTap: () => Navigator.push(
               context,
@@ -47,6 +87,7 @@ class ExampleHome extends StatelessWidget {
             ),
           ),
           ListTile(
+            leading: const Icon(Icons.table_rows_outlined),
             title: const Text('GlassAppBar — modal sheet'),
             onTap: () => showVeilUISheet<void>(
               context: context,
@@ -54,6 +95,7 @@ class ExampleHome extends StatelessWidget {
             ),
           ),
           ListTile(
+            leading: const Icon(Icons.layers_outlined),
             title: const Text('BlurredBottomOverlay — sticky CTA'),
             onTap: () => Navigator.push(
               context,
@@ -90,7 +132,6 @@ class _StandardScreenState extends State<StandardScreen> {
       extendBody: true,
       extendBodyBehindAppBar: true,
       appBar: GlassAppBar(
-        showShadow: true,
         title: 'Standard Screen',
         scrollController: _scroll,
       ),
