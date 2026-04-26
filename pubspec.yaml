@@ -1,0 +1,26 @@
+name: veil_ui
+description: >-
+  iOS 26-inspired glass app bar and blurred bottom overlay for Flutter.
+  Smooth gradient shadows, scroll-driven reveal, and full dark mode support.
+version: 0.1.0
+homepage: https://github.com/mohammedjaber/veil_ui
+repository: https://github.com/mohammedjaber/veil_ui
+issue_tracker: https://github.com/mohammedjaber/veil_ui/issues
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_native: ^0.1.1
+  device_info_plus: ^13.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
