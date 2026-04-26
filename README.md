@@ -9,9 +9,9 @@ Scroll-driven shadows, dark mode aware, zero boilerplate.
 
 ---
 
-![veil_ui preview](https://raw.githubusercontent.com/mjaber5/veil_ui/main/assets/preview.png)
-
-![veil_ui demo](https://raw.githubusercontent.com/mjaber5/veil_ui/main/assets/demo.gif)
+| GlassAppBar | Modal Sheet | BlurredBottomOverlay |
+|:-----------:|:-----------:|:--------------------:|
+| ![GlassAppBar](https://raw.githubusercontent.com/mjaber5/veil_ui/main/assets/demo_appbar.gif) | ![Modal Sheet](https://raw.githubusercontent.com/mjaber5/veil_ui/main/assets/demo_modal.gif) | ![BlurredBottomOverlay](https://raw.githubusercontent.com/mjaber5/veil_ui/main/assets/demo_overlay.gif) |
 
 ---
 
