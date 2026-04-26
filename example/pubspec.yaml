@@ -1,0 +1,17 @@
+name: veil_ui_example
+description: Demonstrates veil_ui widgets — GlassAppBar, BlurredBottomOverlay, and showVeilUISheet.
+publish_to: none
+version: 0.0.1
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+  flutter: ">=3.24.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  veil_ui:
+    path: ../
+
+flutter:
+  uses-material-design: true

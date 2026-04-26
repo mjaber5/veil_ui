@@ -9,6 +9,11 @@ Scroll-driven shadows, dark mode aware, zero boilerplate.
 
 ---
 
+<!-- Replace YOUR_CDN_URL after uploading demo.mp4 via a GitHub Issue -->
+https://YOUR_CDN_URL/demo.mp4
+
+---
+
 ## Features
 
 - **`GlassAppBar`** — transparent app bar with a smooth gradient shadow that fades content scrolling beneath it. Shadow appears on scroll, hides when at top.
