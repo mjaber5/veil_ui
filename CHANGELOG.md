@@ -5,6 +5,14 @@ All notable changes to this project will be documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.8] - 2026-04-26
+
+### Fixed
+- Removed `device_info_plus` dependency — iOS version is now read from
+  `Platform.operatingSystemVersion` (zero extra packages, no version conflicts).
+- README: added `extendBody` and `extendBodyBehindAppBar` to all usage examples.
+- README: added platform support table (Android ✅ iOS ✅ macOS ✅).
+
 ## [0.0.7] - 2026-04-26
 
 ### Changed

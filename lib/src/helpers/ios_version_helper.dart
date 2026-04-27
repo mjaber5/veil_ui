@@ -1,10 +1,11 @@
 import 'dart:io';
 
-import 'package:device_info_plus/device_info_plus.dart';
 import 'package:flutter/foundation.dart';
 
-/// Caches the iOS major version so widgets never issue redundant async
-/// platform calls during build.
+/// Caches the iOS major version so widgets never parse the system string
+/// on every build call.
+///
+/// Uses [Platform.operatingSystemVersion] — no third-party package required.
 ///
 /// **Initialization** — call once at app startup, before [runApp]:
 /// ```dart
@@ -30,13 +31,16 @@ class IosVersionHelper {
     return _majorVersion >= 26;
   }
 
-  /// Reads the system version from [DeviceInfoPlugin] and caches it.
+  /// Parses the iOS version from [Platform.operatingSystemVersion].
   /// Safe to call multiple times — subsequent calls are no-ops.
+  ///
+  /// [Platform.operatingSystemVersion] format: `"Version 17.0 (Build 21A329)"`
   Future<void> init() async {
+    if (_majorVersion != 0) return;
     if (!kIsWeb && Platform.isIOS) {
-      final info = await DeviceInfoPlugin().iosInfo;
-      final raw = info.systemVersion.split('.').first;
-      _majorVersion = int.tryParse(raw) ?? 0;
+      final raw = Platform.operatingSystemVersion;
+      final match = RegExp(r'Version (\d+)').firstMatch(raw);
+      _majorVersion = int.tryParse(match?.group(1) ?? '0') ?? 0;
     }
   }
 
