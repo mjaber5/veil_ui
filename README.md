@@ -30,7 +30,7 @@ Scroll-driven shadows, dark mode aware, zero boilerplate.
 
 ```yaml
 dependencies:
-  veil_ui: ^0.1.0
+  veil_ui: ^0.0.7
 ```
 
 ```dart
@@ -49,18 +49,30 @@ Future<void> main() async {
 
 ---
 
+## Platform Support
+
+| Android | iOS | macOS |
+|:-------:|:---:|:-----:|
+| ✅ | ✅ | ✅ |
+
+---
+
 ## Usage
 
 ### GlassAppBar
 
+> **Important:** Always set `extendBody: true` and `extendBodyBehindAppBar: true` on your `Scaffold` so the transparent app bar overlays the content correctly on both iOS and Android.
+
 ```dart
 Scaffold(
+  extendBody: true,
+  extendBodyBehindAppBar: true,
   appBar: GlassAppBar(title: 'Settings'),
   body: ListView(...),
 )
 ```
 
-**Scroll-driven shadow** — shadow appears after the user scrolls past the threshold:
+**Scroll-driven shadow** — shadow fades in after the user scrolls past the threshold:
 
 ```dart
 class _MyScreenState extends State<MyScreen> {
@@ -75,6 +87,8 @@ class _MyScreenState extends State<MyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
+      extendBodyBehindAppBar: true,
       appBar: GlassAppBar(
         title: 'Feed',
         scrollController: _scroll,

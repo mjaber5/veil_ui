@@ -44,5 +44,7 @@ app._.map.json
 android/
 ios/
 
-# Raw video — only the GIF is needed by pub.dev
+# Raw files — only the 3 demo GIFs are needed by pub.dev
 assets/demo.mov
+assets/demo.gif
+assets/preview.png

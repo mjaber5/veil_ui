@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format follows [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.7] - 2026-04-26
+
+### Changed
+- README: replaced single GIF with 3 side-by-side demos — GlassAppBar, modal sheet, BlurredBottomOverlay.
+
+## [0.0.6] - 2026-04-26
+
+### Fixed
+- README: GIF and preview image now load correctly on pub.dev using `raw.githubusercontent.com` URLs.
+
 ## [0.0.5] - 2026-04-26
 
 ### Changed

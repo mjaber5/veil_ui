@@ -44,5 +44,7 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-# Demo assets — raw video excluded, preview image is tracked
+# Demo assets — raw video excluded, GIFs are tracked
 assets/demo.mov
+assets/demo.gif
+assets/preview.png
